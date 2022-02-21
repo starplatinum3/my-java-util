@@ -6,9 +6,11 @@ package sqlGen;
 //import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -100,7 +102,9 @@ public class SqlGenerator {
         map.put("class java.lang.Integer", "int");
 
 //        map.put("class java.lang.Long", "integer unsigned");
-        map.put("class java.lang.Long", "long int");
+//        map.put("class java.lang.Long", "long int");
+//        map.put("class java.lang.Long", "long");
+        map.put("class java.lang.Long", "int");
 
         map.put("class java.lang.byte[]", "blob");
 
@@ -110,7 +114,8 @@ public class SqlGenerator {
 
         map.put("class java.lang.Float", "float");
 
-        map.put("class java.lang.Double", "long float");
+//        map.put("class java.lang.Double", "long float");
+        map.put("class java.lang.Double", "double");
 
         map.put("class java.sql.Date", "datetime");
 
@@ -125,6 +130,32 @@ public class SqlGenerator {
         putMapSQLite();
         sqlConstruction();
 
+    }
+//    void moveJavaCode(File file){
+//        try ( Scanner scanner  =new Scanner(file)){
+//            while (scanner.hasNextLine()) {
+//                String line = scanner.nextLine();
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+    void moveAndroidCode(){
+//        D:\moveAndDir
+        File file = new File("D:\\moveAndDir");
+//        String[] list = file.list();
+//        java
+        File[] files = file.listFiles();
+        for (File file1 : files) {
+            String name = file1.getName();
+            if(name.endsWith(".java")){
+
+            }
+        }
+//        try (new Scanner(new File())){
+//
+//        }
     }
 
     public static void main(String[] args) throws ClassNotFoundException {
@@ -200,7 +231,10 @@ public class SqlGenerator {
 //        String filePath = "G:\\project\\springbootProj\\pz-blog\\doc\\data.sql";
 //        String prefix = "com.pz.pojo.".trim();
 
-        String packageName = "G:\\project\\javaProj\\myJavaUtil\\src\\main\\java\\entity";
+//        String packageName = "G:\\project\\javaProj\\myJavaUtil\\src\\main\\java\\entity";
+//        String filePath = "G:\\project\\springbootProj\\pz-blog\\doc\\data.sql";
+//        String prefix = "entity.".trim();
+        String packageName = "D:\\proj\\javaProj\\my-java-util\\src\\main\\java\\entity";
         String filePath = "G:\\project\\springbootProj\\pz-blog\\doc\\data.sql";
         String prefix = "entity.".trim();
 
@@ -225,6 +259,7 @@ public class SqlGenerator {
 //            String str = (String) oStr;
             String className = prefix + str.substring(0, str.lastIndexOf("."));
 
+//            我目前是不写入 file的
             String sql = generateSql(className, filePath);
 
             String tableName = "clock_table";
@@ -266,6 +301,13 @@ public class SqlGenerator {
     }
 
 
+    /**
+     *
+     * @param className    className 比如 com.sun.accessibility.J
+     * @param filePath
+     * @param clzNamePrefix
+     * @return
+     */
     public static String generateSql(String className, String filePath, String clzNamePrefix) {
         try {
 //            System.out.println(className);
@@ -273,6 +315,7 @@ public class SqlGenerator {
 //          Class  redPacketRecordClz= Class.forName("zucc.kinect.entity.RedPacketRecord");
 //            System.out.println(redPacketRecordClz.getName());
             Class clz = Class.forName(className);
+//            className 比如 com.sun.accessibility.J
 
 //            这个需要是 项目里面的类
             className = clz.getSimpleName();
@@ -287,8 +330,14 @@ public class SqlGenerator {
 
             String varchar = " CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,";
 //            String filedType = UNDERLINE;
-            String filedType = CAMEL;
+//            String filedType = CAMEL;
+            String filedType = UNDERLINE;
             for (Field f : fields) {
+                int modifiers = f.getModifiers();
+                if (Modifier.isStatic(modifiers)) {
+
+                    continue;
+                }
                 String name = f.getName();
                 if (f.getName().equals("id")) continue;
                 if(name.equals("serialVersionUID"))continue;
@@ -360,8 +409,12 @@ public class SqlGenerator {
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
 
-            if (i != 0 && (c >= 'A' && c <= 'Z')) {
-                sb.append("_");
+//            if (i != 0 && (c >= 'A' && c <= 'Z')) {
+            if (c >= 'A' && c <= 'Z') {
+                if(i!=0){
+                    sb.append("_");
+
+                }
 //                firstUpperAfterUnder=true;
                 c = Character.toLowerCase(c);
 

@@ -1,25 +1,23 @@
-//import org.apache.commons.lang.StringUtils;
+package top.starp.util;//import org.apache.commons.lang.StringUtils;
 //import org.apache.commons.lang.text.StrBuilder;
 //
 //import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang3.CharSetUtils;
+//import entity.Place;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * //现在转移到 top.starp.util.StrUtil 因为没有包的名字 好像不能import
- * //https://blog.csdn.net/echizao1839/article/details/80890490
- */
-@Deprecated
+//https://blog.csdn.net/echizao1839/article/details/80890490
 public class StrUtil {
     /**
      * StrUtil 类，声明省略
@@ -322,6 +320,24 @@ public class StrUtil {
 
         }
 
+    }
+
+    public static <T>  void printStrHighLight(String  string,List<Integer> HighLightPoses){
+//        list.forEach(o);
+//        for (T t : list) {
+//            if()
+//        }
+        for (int i = 0; i < string.length(); i++) {
+            if(HighLightPoses.contains(i)){
+//                System.out.print("("+string.charAt(i)+") ");
+                System.out.print("("+string.charAt(i)+")");
+            }else{
+//                System.out.print(string.charAt(i)+" ");
+                System.out.print(string.charAt(i));
+            }
+
+        }
+        System.out.println();
     }
 
 //    https://www.iteye.com/blog/full-stack-2174226

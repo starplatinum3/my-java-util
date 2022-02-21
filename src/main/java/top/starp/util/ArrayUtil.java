@@ -1,5 +1,7 @@
 package top.starp.util;
 
+import java.util.List;
+
 public class ArrayUtil {
     int[][] doubleDimArrUnwrap() {
 //二维数组
@@ -22,5 +24,52 @@ public class ArrayUtil {
             }
             System.out.println();
         }
+    }
+    public static <T>  void printListHighLight(List<T>list,List<Integer> HighLightPoses){
+//        list.forEach(o);
+//        for (T t : list) {
+//            if()
+//        }
+        for (int i = 0; i < list.size(); i++) {
+            if(HighLightPoses.contains(i)){
+                System.out.print("("+list.get(i)+") ");
+            }else{
+                System.out.print(list.get(i)+" ");
+            }
+
+        }
+        System.out.println();
+    }
+
+    public static <T>  void printListHighLight(T [] list,List<Integer> HighLightPoses){
+//        list.forEach(o);
+//        for (T t : list) {
+//            if()
+//        }
+        for (int i = 0; i < list.length; i++) {
+            if(HighLightPoses.contains(i)){
+                System.out.print("("+list[i]+") ");
+            }else{
+                System.out.print(list[i]+" ");
+            }
+
+        }
+        System.out.println();
+    }
+
+    public static  void printListHighLight(char [] list,List<Integer> HighLightPoses){
+//        list.forEach(o);
+//        for (T t : list) {
+//            if()
+//        }
+        for (int i = 0; i < list.length; i++) {
+            if(HighLightPoses.contains(i)){
+                System.out.print("("+list[i]+")");
+            }else{
+                System.out.print(list[i]);
+            }
+
+        }
+        System.out.println();
     }
 }

@@ -1,7 +1,10 @@
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+//import com.sun.org.slf4j.internal.Logger;
+//import com.sun.org.slf4j.internal.LoggerFactory;
+//import com.sun.org.slf4j.internal.Logger;
+//import com.sun.org.slf4j.internal.LoggerFactory;
 import common.Commons;
-import entity.SqliteCol;
+import sqlGen.SqliteCol;
+//import entity.SqliteCol;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -29,7 +32,7 @@ import java.util.stream.Collectors;
 
 //https://blog.csdn.net/weixin_36090220/article/details/114213993
 public class SqlGenerator {
-    private static final Logger logger = LoggerFactory.getLogger(SqlGenerator.class);
+//    private static final Logger logger = LoggerFactory.getLogger(SqlGenerator.class);
 
     /**
      * 用来存储Java等属性类型与sql中属性类型的对照
@@ -192,7 +195,8 @@ public class SqlGenerator {
         List<String > list = getAllClasses(packageName);
 
         if(list==null){
-            logger.error("getAllClasses 是空");
+//            logger.error("getAllClasses 是空");
+            System.out.println("getAllClasses 是空");
             return;
         }
         for (String str : list) {
@@ -256,6 +260,8 @@ public class SqlGenerator {
 
             className = clzNamePrefix + getStandardFields(className);
 
+            System.out.println("className");
+            System.out.println(className);
             Field[] fields = clz.getDeclaredFields();
 
             StringBuilder column = new StringBuilder();
@@ -285,8 +291,8 @@ public class SqlGenerator {
                     " \n ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci;\n";
 
         } catch (ClassNotFoundException e) {
-            logger.debug("该类未找到！" + className);
-
+//            logger.debug("该类未找到！" + className);
+            System.out.println("该类未找到！" + className);
             return null;
 
         }
@@ -308,6 +314,7 @@ public class SqlGenerator {
             char c = str.charAt(i);
 
             if (i != 0 && (c >= 'A' && c <= 'Z')) {
+//            if (c >= 'A' && c <= 'Z') {
                 sb.append("_");
 //                firstUpperAfterUnder=true;
                 c = Character.toLowerCase(c);
@@ -356,8 +363,8 @@ public class SqlGenerator {
             return classList;
 
         } else {
-            logger.debug("包路径未找到！");
-
+//            logger.debug("包路径未找到！");
+            System.out.println("包路径未找到！");
             return null;
 
         }
@@ -472,8 +479,8 @@ public class SqlGenerator {
                     alterNameCode+"\n";
 
         } catch (ClassNotFoundException e) {
-            logger.debug("该类未找到！" + className);
-
+//            logger.debug("该类未找到！" + className);
+            System.out.println("该类未找到！" + className);
             return null;
 
         }
