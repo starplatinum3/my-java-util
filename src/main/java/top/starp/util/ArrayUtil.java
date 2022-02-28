@@ -1,8 +1,15 @@
 package top.starp.util;
 
+//import netscape.javascript.JSObject;
+
 import java.util.List;
 
 public class ArrayUtil {
+
+    void ma(String string){
+        //[1,2,3,1]
+        //JSObject.
+    }
     int[][] doubleDimArrUnwrap() {
 //二维数组
         return null;
