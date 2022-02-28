@@ -27,6 +27,10 @@ class Dirs{
 //    List<Character> dirs=new ArrayList<>();
     List<Character> dirs;
 }
+
+/**
+ * ac  调试工具  https://gitee.com/starplatinum111/my-java-util/blob/master/src/main/java/top/starp/util/ArrayUtil.java
+ */
 class Solution2 {
 
     public static void main(String[] args) {
