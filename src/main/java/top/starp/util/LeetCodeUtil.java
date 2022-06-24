@@ -25,6 +25,16 @@ public class LeetCodeUtil {
         return  newHeadOut;
     }
 
+    /*
+打印一个数的二进制码
+https://blog.csdn.net/qq_36285899/article/details/120708951
+ */
+    public static void printBinary(int num){
+        for (int i = 31; i >= 0; i--){
+            System.out.print(((num >> i) & 1));
+        }
+    }
+
     public static  void  printList(ListNode startNode){
         for(ListNode n=startNode;n!=null;n=n.next){
             System.out.print(n.val+" ");

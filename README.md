@@ -6,6 +6,9 @@ java 代码生成 sql create
 D:\proj\javaProj\my-java-util\src\main\java\top\starp\util\LeetCodeUtil.java
 leetcode 建树工具
 
+git add .
+git commit -m "sass"
+git push origin master
 
 2022年2月21日12:49:52
 D:\proj\javaProj\my-java-util\src\main\java\top\starp\LeetCode\t838\Solution2.java
