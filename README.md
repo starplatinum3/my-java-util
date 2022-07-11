@@ -15,3 +15,7 @@ https://leetcode-cn.com/problems/push-dominoes/
 2022年2月23日09:47:07
 JsonUtil
 
+
+git add .
+git commit -m "调度"
+git push origin master

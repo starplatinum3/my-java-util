@@ -9,6 +9,7 @@ public class QueueTest {
     public static void main(String[] args) {
         int n=3;
         List<Queue>queues=new ArrayList<>();
+//        List<Character>queues=new ArrayList<>();
         for (int i = 0; i <n ; i++) {
             Queue<Integer> queue=new LinkedList<>();
 //            queue.add(1);
