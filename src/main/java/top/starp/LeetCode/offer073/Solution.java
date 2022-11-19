@@ -66,8 +66,90 @@ class Solution {
 
         make();
 
-        System.out.println(4/ 3);
-        System.out.println((4 +3 -1 ) / 3);
+//        Math.floor()
+//        1...
+        System.out.println(
+                Math.floor(
+                        4*1.0/ 3
+                )
+            );
+        System.out.println(
+                Math.floor(
+                        (4 +3 -1 )*1.0 / 3
+                )
+               );
+
+
+        System.out.println(
+                4*1.0/ 3
+        );
+        System.out.println(
+                (4 +3 -1 )*1.0 / 3
+        );
+
+
+        System.out.println(
+                Math.ceil(
+                        4*1.0/ 3
+                )
+        );
+        System.out.println(
+                Math.ceil(
+                        (4 +3 -1 )*1.0 / 3
+                )
+        );
+
+
+        System.out.println(
+                Math.ceil(
+                        5*1.0/ 4
+                )
+        );
+        System.out.println(
+                Math.ceil(
+                        (  5 +4 -1 )*1.0 / 4
+                )
+        );
+
+        System.out.println(
+
+                        5*1.0/ 4
+        );
+        System.out.println(
+                (  5 +4 -1 )*1.0 / 4
+        );
+
+        System.out.println(
+                6*1.0/ 4
+        );
+        System.out.println(
+                (  6 +4 -1 )*1.0 / 4
+        );
+//        1.5
+//        2.25
+
+
+//        pileChuSpe
+//        6/ 4
+//        pileChuSpeAdd
+//        6 +4 -1 ) / 4
+
+//        1.25
+//        2.0
+
+//        2.0
+//        2.0
+//
+//        pileChuSpe
+//        5/ 4
+//        pileChuSpeAdd
+//        5 +4 -1 ) / 4
+
+
+//        2.0
+//        2.0
+
+
 //        pileChuSpe
 //        4/ 3
 //        pileChuSpeAdd
@@ -94,9 +176,13 @@ class Solution {
    static void make(){
       String templ=  "#pile#/ #speed#";
       String templAdd=  "#pile# +#speed# -1 ) / #speed#";
-      int pile=4;
-      int speed=3;
+//      int pile=4;
+//      int speed=3;
+//       int pile=5;
+//       int speed=4;
 
+       int pile=6;
+       int speed=4;
       String pileChuSpe=
       templ
               .replace("#pile#", String.valueOf(pile))
