@@ -29,8 +29,11 @@ public class 小美买饮料 {
                 }
             }
         }
+
         System.out.println("No");
     }
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 //        String s = scanner.nextLine();

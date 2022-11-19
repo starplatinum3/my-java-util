@@ -64,6 +64,7 @@ public class ArrayUtil {
         System.out.println();
     }
 
+
     public static  void printListHighLight(char [] list,List<Integer> HighLightPoses){
 //        list.forEach(o);
 //        for (T t : list) {
@@ -80,3 +81,6 @@ public class ArrayUtil {
         System.out.println();
     }
 }
+
+
+

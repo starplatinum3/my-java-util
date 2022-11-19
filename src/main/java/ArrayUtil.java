@@ -4,6 +4,7 @@ public class ArrayUtil {
         return null;
     }
 
+
     public static void printMatrix(int[][] matrix) {
         for (int[] ints : matrix) {
             for (int n = 0; n < matrix[0].length; n++) {

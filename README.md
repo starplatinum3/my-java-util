@@ -15,6 +15,9 @@ D:\proj\javaProj\my-java-util\src\main\java\top\starp\LeetCode\t838\Solution2.ja
 https://leetcode-cn.com/problems/push-dominoes/
 看了题解 然而还是花了一整个上午才写出来。。
 
+
+idea java 代码只能回车一行，其他类型文件正常。电脑重启也无效
+
 2022年2月23日09:47:07
 JsonUtil
 

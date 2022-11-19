@@ -9,6 +9,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+
+
+    
 <!--    https://www.cnblogs.com/Durant0420/p/14813838.html-->
     <groupId>com</groupId>
     <artifactId>starp</artifactId>
