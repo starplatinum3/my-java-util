@@ -48,6 +48,42 @@ public class ArrayUtil {
         System.out.println();
     }
 
+    public static <T>  void printListHighLight(String list,List<Integer> HighLightPoses){
+//        list.forEach(o);
+//        for (T t : list) {
+//            if()
+//        }
+        for (int i = 0; i < list.length(); i++) {
+            if(HighLightPoses.contains(i)){
+                System.out.print("("+list.charAt(i)+") ");
+            }else{
+                System.out.print(list.charAt(i)+" ");
+            }
+
+        }
+        System.out.println();
+    }
+
+    public static <T>  void printListCut(String list,int start,int end){
+//        list.forEach(o);
+//        for (T t : list) {
+//            if()
+//        }
+        for (int i = 0; i < list.length(); i++) {
+            if(start==i){
+                System.out.print("("+list.charAt(i)+" ");
+
+            }else if(end==i){
+                System.out.print(list.charAt(i)+") ");
+            }else{
+                System.out.print(list.charAt(i)+" ");
+            }
+
+
+        }
+        System.out.println();
+    }
+
     public static <T>  void printListHighLight(T [] list,List<Integer> HighLightPoses){
 //        list.forEach(o);
 //        for (T t : list) {
